@@ -2,13 +2,12 @@ import 'dart:async';
 import 'dart:math';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
-import 'dart:io';
 
 import 'package:another_brother/label_info.dart';
 import 'package:another_brother/printer_info.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MyApp());
@@ -951,29 +950,31 @@ class _QlBluetoothPrintHappyMothersDayState
               textAlign: TextAlign.center,
             ),
           ),
-          new Container(
+          RepaintBoundary(
             key: _globalKey,
-            margin: const EdgeInsets.all(15.0),
-            padding: const EdgeInsets.all(3.0),
-            decoration:
-                BoxDecoration(border: Border.all(color: Colors.blueAccent)),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image(width: 50.0, image: AssetImage(_assetImage)),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "$_mdAddress,\n" +
-                          "Happy$_belated mother's day!\n" +
-                          (_belated == " belated"
-                              ? ""
-                              : "Do not open until $_mdDate"),
-                      textAlign: TextAlign.center,
+            child: new Container(
+              margin: const EdgeInsets.all(15.0),
+              padding: const EdgeInsets.all(3.0),
+              decoration:
+                  BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image(width: 50.0, image: AssetImage(_assetImage)),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "$_mdAddress,\n" +
+                            "Happy$_belated mother's day!\n" +
+                            (_belated == " belated"
+                                ? ""
+                                : "Do not open until $_mdDate"),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                  ),
-                  Image(width: 50.0, image: AssetImage(_assetImage))
-                ]),
+                    Image(width: 50.0, image: AssetImage(_assetImage))
+                  ]),
+            ),
           ),
         ],
       ),
