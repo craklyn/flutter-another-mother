@@ -955,8 +955,9 @@ class _QlBluetoothPrintHappyMothersDayState
             child: new Container(
               margin: const EdgeInsets.all(15.0),
               padding: const EdgeInsets.all(3.0),
-              decoration:
-                  BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.blueAccent),
+                  color: Colors.white),
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
